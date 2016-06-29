@@ -32,12 +32,11 @@ Etcd is installed with the default configuration and some parameters can be over
 
 ### Custom Configuration
 
-Etcd is installed under /opt/etcd and make use of /opt/etcd/bin/etcd-source.sh to generate env variables.
+Etcd is installed under /opt/skydns and make use of /opt/skydns/bin/skydns-source.sh to source env variables.
 
 You can edit this files in order customize configuration
 
-You could also include FROM rawmind/alpine-etcd at the top of your Dockerfile, and add your custom config.
-
+You could also include FROM rawmind/alpine-skydns at the top of your Dockerfile, and add your custom config.
 
 
 [alpine-monit]: https://github.com/rawmind0/alpine-monit/
