@@ -1,4 +1,4 @@
-FROM rawmind/alpine-monit:0.5.18-5
+FROM rawmind/alpine-monit:0.5.19-1
 MAINTAINER Raul Sanchez <rawmind@gmail.com>
 
 ENV SERVICE_NAME=skydns \
