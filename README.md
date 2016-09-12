@@ -11,7 +11,7 @@ docker build -t rawmind/alpine-skydns:<version> .
 
 ## Versions
 
-- `2.5.3-3` [(Dockerfile)](https://github.com/rawmind0/alpine-skydns/blob/2.5.3-3/Dockerfile)
+- `2.5.3-4` [(Dockerfile)](https://github.com/rawmind0/alpine-skydns/blob/2.5.3-4/Dockerfile)
 
 ## Configuration
 
