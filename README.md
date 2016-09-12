@@ -11,7 +11,7 @@ docker build -t rawmind/alpine-skydns:<version> .
 
 ## Versions
 
-- `2.5.3-2` [(Dockerfile)](https://github.com/rawmind0/alpine-skydns/blob/2.5.3-2/Dockerfile)
+- `2.5.3-3` [(Dockerfile)](https://github.com/rawmind0/alpine-skydns/blob/2.5.3-3/Dockerfile)
 
 ## Configuration
 
@@ -23,11 +23,12 @@ Besides, you can customize the configuration in several ways:
 
 Etcd is installed with the default configuration and some parameters can be overrided with env variables:
 
-- ETCD_MACHINES=${ETCD_MACHINES:-"http://etcd:2379"}
-- SKYDNS_ADDR=${SKYDNS_SDDR:-"0.0.0.0:5353"}
+- ETCD_MACHINES=${ETCD_MACHINES:-"http://etcd:2379"}	# Multiple values separated by ,
+- SKYDNS_ADDR=${SKYDNS_ADDR:-"0.0.0.0:53"}
 - SKYDNS_DOMAIN=${SKYDNS_DOMAIN:-"dev.local"} 
 - SKYDNS_NAMESERVERS=${SKYDNS_NAMESERVERS:-"8.8.8.8:53,8.8.4.4:53"} 
 - SKYDNS_PATH_PREFIX=${SKYDNS_PATH_PREFIX:-"skydns"}
+- SKYDNS_NDOTS=${SKYDNS_NDOTS:-"2"}
 
 
 ### Custom Configuration
