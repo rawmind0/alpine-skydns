@@ -2,7 +2,7 @@
 
 cat << EOF > ${SERVICE_CONF}
 export ETCD_MACHINES=${ETCD_MACHINES:-"http://etcd:2379"}
-export SKYDNS_ADDR=${SKYDNS_ADDR:-"0.0.0.0:5353"}
+export SKYDNS_ADDR=${SKYDNS_ADDR:-"0.0.0.0:53"}
 export SKYDNS_DOMAIN=${SKYDNS_DOMAIN:-"dev.local"}
 export SKYDNS_PATH_PREFIX=${SKYDNS_PATH_PREFIX:-"skydns"}
 export SKYDNS_NDOTS=${SKYDNS_NDOTS:-"1"}

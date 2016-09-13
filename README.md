@@ -42,7 +42,15 @@ You can edit this files in order customize configuration
 
 You could also include FROM rawmind/alpine-skydns at the top of your Dockerfile, and add your custom config.
 
+If you are running it in rancher, you could run [rancher-skydns][rancher-skydns] as a sidekick to get dynamic configuration.
+
+
+## Example
+
+See [rancher-example][rancher-example], that run kafka in a rancher system with dynamic configuration.
+
 
 [alpine-monit]: https://github.com/rawmind0/alpine-monit/
 [skydns]: https://github.com/skynetservices/skydns
-
+[rancher-skydns]: https://hub.docker.com/r/rawmind/rancher-skydns/
+[rancher-example]: https://github.com/rawmind0/alpine-skydns/tree/master/rancher
