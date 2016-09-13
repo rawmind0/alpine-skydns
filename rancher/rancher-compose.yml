@@ -3,7 +3,7 @@
   version: 2.5.3-rancher1
   description: |
     (Experimental) Skydns service.
-  minimum_rancher_version: v1.11.0
+  minimum_rancher_version: v1.0.0
   maintainer: "Raul Sanchez <rawmind@gmail.com>"
   uuid: skydns-0
   questions:
@@ -13,12 +13,13 @@
       required: true
       default: "3"
       type: "int"
-    - variable: "skydns_etcd"
-      description: "Etcd url to connect to"
-      label: "Etcd url:"
+    - variable: "etcd_link"
+      description: |
+        Choose the etcd service to use. 
+      label: "Etcd stack/service"
+      default: "etcd/etcd"
       required: true
-      default: "http://etcd.etcd:2379"
-      type: "string"
+      type: "service"
     - variable: "skydns_addr"
       description: "Skydns address to bind"
       label: "Skydns bind:"
@@ -31,24 +32,6 @@
       required: true
       default: "dev.local"
       type: "string"
-    - variable: "skydns_no_rec"
-      label: "Disable skydns forward:"
-      description: |
-        Disable skydns forward recursion
-      default: true
-      required: true
-      type: enum
-      options:
-        - false
-        - true
-    - variable: "skydns_nameservers"
-      description: |
-        Skydns nameservers forwarders. <host>:<port>,<host>:<port>...
-        Needed if "Disable skydns forward: false"
-      label: "Skydns nameservers:"
-      required: false
-      default: ""
-      type: "string"
     - variable: "skydns_path_prefix"
       description: "Skydns path prefix"
       label: "Skydns path prefix:"
@@ -56,11 +39,26 @@
       default: "skydns"
       type: "string"
     - variable: "skydns_ndots"
-      description: "skydns_ndots"
-      label: "skydns_ndots:"
+      description: "Minimum dot at query to forward"
+      label: "Skydns ndots:"
       required: true
       default: 1
       type: "int"
+    - variable: "skydns_no_rec"
+      label: "Disable skydns forward:"
+      description: |
+        Disable skydns forward recursion
+      default: true
+      required: true
+      type: boolean
+    - variable: "skydns_nameservers"
+      description: |
+        Skydns forward servers. <host>:<port>,<host>:<port>...
+        Needed if "Disable skydns forward: false"
+      label: "Skydns forward servers:"
+      required: false
+      default: ""
+      type: "string"
 skydns:
   scale: ${skydns_scale}
   retain_ip: true

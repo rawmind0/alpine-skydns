@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/image/rawmind/alpine-skydns.svg)](https://microbadger.com/images/rawmind/alpine-skydns "Get your own image badge on microbadger.com")
+
 alpine-skydns 
 ==============
 
@@ -26,10 +28,10 @@ Etcd is installed with the default configuration and some parameters can be over
 - ETCD_MACHINES=${ETCD_MACHINES:-"http://etcd:2379"}	# Multiple values separated by ,
 - SKYDNS_ADDR=${SKYDNS_ADDR:-"0.0.0.0:53"}				# Address to bind
 - SKYDNS_DOMAIN=${SKYDNS_DOMAIN:-"dev.local"} 			# Skydns authorizative domain
-- SKYDNS_NAMESERVERS=${SKYDNS_NAMESERVERS:-"8.8.8.8:53,8.8.4.4:53"} 	# Dns forwarders 
 - SKYDNS_PATH_PREFIX=${SKYDNS_PATH_PREFIX:-"skydns"}	# skydns etcd prefix
 - SKYDNS_NDOTS=${SKYDNS_NDOTS:-"1"}						# Minimum dot at name to forward query
-- SKYDNS_NO_REC=${SKYDNS_NO_REC:-"false"}				# Enables or disables recursion
+- SKYDNS_NO_REC=${SKYDNS_NO_REC:-"true"}				# Enables or disables recursion
+- SKYDNS_NAMESERVERS=${SKYDNS_NAMESERVERS:-""} 			# Dns forwarders 
 
 
 ### Custom Configuration
