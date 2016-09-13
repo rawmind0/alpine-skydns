@@ -2,19 +2,19 @@ FROM rawmind/alpine-monit:0.5.19-2
 MAINTAINER Raul Sanchez <rawmind@gmail.com>
 
 ENV SERVICE_NAME=skydns \
-  SERVICE_HOME=/opt/skydns \
-  SERVICE_CONF=/opt/skydns/etc/skydns-source \
-  SERVICE_VERSION=2.5.3a \
-  SERVICE_USER=skydns \
-  SERVICE_UID=10006 \
-  SERVICE_GROUP=skydns \
-  SERVICE_GID=10006 \
-  GOMAXPROCS=2 \
-  GOROOT=/usr/lib/go \
-  GOPATH=/opt/src \
-  GOBIN=/gopath/bin \
-  PATH=/opt/skydns/bin:${PATH} \
-  SERVICE_URL=github.com/skynetservices/skydns 
+    SERVICE_HOME=/opt/skydns \
+    SERVICE_CONF=/opt/skydns/etc/skydns-source \
+    SERVICE_VERSION=2.5.3a \
+    SERVICE_USER=skydns \
+    SERVICE_UID=10006 \
+    SERVICE_GROUP=skydns \
+    SERVICE_GID=10006 \
+    GOMAXPROCS=2 \
+    GOROOT=/usr/lib/go \
+    GOPATH=/opt/src \
+    GOBIN=/gopath/bin \
+    PATH=/opt/skydns/bin:${PATH} \
+    SERVICE_URL=github.com/skynetservices/skydns 
 
 RUN mkdir -p ${SERVICE_HOME}/bin ${SERVICE_HOME}/logs ${SERVICE_HOME}/etc && \
     apk --update add bind-tools && \
