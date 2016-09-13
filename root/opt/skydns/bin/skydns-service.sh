@@ -44,13 +44,19 @@ function serviceCheck {
         serviceDefault
     fi
     source ${SERVICE_CONF}
+
+    SERVICE_ARGS=${SERVICE_ARGS:-""}
+
+    if [ "${SKYDNS_NO_REC}" == "true" ]; then
+        SERVICE_ARGS=${SERVICE_ARGS}" -no-rec"
+    fi
 }
 
 function serviceStart {
     log "[ Starting ${SERVICE_NAME}... ]"
     serviceCheck
     serviceLog
-    nohup ${SERVICE_HOME}/bin/skydns &
+    nohup ${SERVICE_HOME}/bin/skydns ${SERVICE_ARGS} &
     echo $! > ${SERVICE_PID_FILE}
 }
 

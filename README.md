@@ -11,7 +11,7 @@ docker build -t rawmind/alpine-skydns:<version> .
 
 ## Versions
 
-- `2.5.3-4` [(Dockerfile)](https://github.com/rawmind0/alpine-skydns/blob/2.5.3-4/Dockerfile)
+- `2.5.3-5` [(Dockerfile)](https://github.com/rawmind0/alpine-skydns/blob/2.5.3-5/Dockerfile)
 
 ## Configuration
 
@@ -24,11 +24,12 @@ Besides, you can customize the configuration in several ways:
 Etcd is installed with the default configuration and some parameters can be overrided with env variables:
 
 - ETCD_MACHINES=${ETCD_MACHINES:-"http://etcd:2379"}	# Multiple values separated by ,
-- SKYDNS_ADDR=${SKYDNS_ADDR:-"0.0.0.0:53"}
-- SKYDNS_DOMAIN=${SKYDNS_DOMAIN:-"dev.local"} 
-- SKYDNS_NAMESERVERS=${SKYDNS_NAMESERVERS:-"8.8.8.8:53,8.8.4.4:53"} 
-- SKYDNS_PATH_PREFIX=${SKYDNS_PATH_PREFIX:-"skydns"}
-- SKYDNS_NDOTS=${SKYDNS_NDOTS:-"2"}
+- SKYDNS_ADDR=${SKYDNS_ADDR:-"0.0.0.0:53"}				# Address to bind
+- SKYDNS_DOMAIN=${SKYDNS_DOMAIN:-"dev.local"} 			# Skydns authorizative domain
+- SKYDNS_NAMESERVERS=${SKYDNS_NAMESERVERS:-"8.8.8.8:53,8.8.4.4:53"} 	# Dns forwarders 
+- SKYDNS_PATH_PREFIX=${SKYDNS_PATH_PREFIX:-"skydns"}	# skydns etcd prefix
+- SKYDNS_NDOTS=${SKYDNS_NDOTS:-"1"}						# Minimum dot at name to forward query
+- SKYDNS_NO_REC=${SKYDNS_NO_REC:-"false"}				# Enables or disables recursion
 
 
 ### Custom Configuration
