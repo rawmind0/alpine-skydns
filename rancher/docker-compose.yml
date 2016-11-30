@@ -1,5 +1,5 @@
 skydns:
-  image: rawmind/alpine-skydns:2.5.3-6
+  image: rawmind/alpine-skydns:2.5.3-7
   volumes_from:
     - skydns-conf
   environment:
@@ -15,6 +15,7 @@ skydns:
     io.rancher.container.hostname_override: container_name
     io.rancher.sidekicks: skydns-conf
     io.skydns.domain: ${skydns_domain}
+    io.skydns.role: server
 skydns-conf:
   net: none
   labels:
