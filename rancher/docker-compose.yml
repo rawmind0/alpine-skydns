@@ -1,5 +1,5 @@
 skydns:
-  image: rawmind/alpine-skydns:2.5.3-7
+  image: rawmind/alpine-skydns:2.5.3-8
   volumes_from:
     - skydns-conf
   environment:
